@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #0a6882, #00c4cc);
+}
+
+/*########################### Main divs ######################################*/
+
+/*Chat screen - Body*/
+#bar2 {
+    display: flex;
+    flex-direction: column;
+}
+
+/*########################### Sub Main divs of bar2 ######################################*/
+
+/*Top container of chat screen - bar2*/
+#color-box-top {
+    background-color: #095569;
+    width: 75vw;
+    height: 9vh;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/*Chat container of chat screen - bar2*/
+#text-container {
+    background-color: rgb(240, 238, 238);
+    width: 75vw;
+    height: 79vh;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+/*Bottom container of chat screen - bar2*/
+#chat-box-bottom {
+    background-color: #095569;
+    width: 75vw;
+    height: 10vh;
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*########################### Sub divs of the Bar2 divs ######################################*/
+
+/*textpart of the top container - color-box-top*/
+#color-box-top-text {
+    font-size: 40;
+    margin:0;
+    margin-right: 5%;
+}
+
+#return {
+    width: 100%;
+}
+
+#returnlink{
+    width: 3%;
+    margin-left: 2%;
+
+}
+
+/*chatting section where text is inputed - text-container*/
+#texting-area {
+    margin: 0;
+    padding: 0;
+}
+
+/*chatting section where text is inputed's li - texting-area*/
+#texting-area li{
+    list-style: none;
+    background: linear-gradient(to bottom right, #0a6882, #00c4cc);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 2%;
+    margin-left: 52%;
+    padding: 3%;
+    color: aliceblue;
+    word-wrap: break-word;
+    float: right;
+    border-radius: 20px
+}
+
+/*Input, Button in chat screen - chat-box-bottom*/
+.interform{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+#chat{
+    margin-left: 2%;
+    height: 65%;
+    border-radius: 15px;
+    width: 82%;
+    border: black 3px solid;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+#submitchat{
+    margin-right: 3%;
+    height: 70%;
+    width: 10%;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+#submitchat:hover{
+    background-color: rgb(145, 186, 135);
+}
+
+#newmessage{
+    position: sticky;
+    width: 5%;
+    top: 90%;
+    left: 92%;
+    opacity: 0%;
+}
+
+/*##########################################################################*/
+
+@media only screen and (max-width: 912px) {
+
+    /*########################### Divs to hide for mobile ######################################*/
+
+    /*top container of nav - Bar*/
+    #color-box-top1 {
+        display: none;
+    }
+
+    /*storing the textfield and search button - Bar*/
+    #search-list {
+        display: none;
+    }
+
+    /*where bots are stored  - Bar*/
+    #bot-container {
+        display: none;
+    }
+
+    /*########################### Sub Main divs of bar2 ######################################*/
+
+    /*Top container of chat screen - bar2*/
+    #color-box-top {
+        background-color: #0a6882;
+        width: 100vw;
+        height: 10vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /*Chat container of chat screen - bar2*/
+    #text-container {
+        background-color: rgb(240, 238, 238);
+        width: 100vw;
+        height: 80vh;
+        margin: 0;
+        overflow-y: auto;
+    }
+
+    /*Bottom container of chat screen - bar2*/
+    #chat-box-bottom {
+        background-color: #0a6882;
+        width: 100vw;
+        height: 10vh;
+        margin: 0;
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*########################### Sub divs of the Bar2 divs ######################################*/
+
+    /*textpart of the top container - color-box-top*/
+    #color-box-top-text {
+        font-size: 25px;
+        margin: 0;
+        margin-right: 5%;
+    }
+
+    #return {
+        width: 100%;
+    }
+    
+    #returnlink{
+        width: 8%;
+        margin-left: 2%;
+    
+    }
+
+    /*Textfield to chat with the bot - chat-box-bottom*/
+    #chat {
+        margin-left: 2%;
+        width: 75%;
+        height: 50%;
+        border: black 3px solid;
+        font-family: 'Times New Roman', Times, serif;
+        border-radius: 15px; 
+    }
+
+    /*Submit button to send the message to bot - chat-box-bottom*/
+    #submitchat {
+        margin-left: 2%;
+        width: 15%; 
+        font-family: 'Times New Roman', Times, serif;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 20px;  
+    }
+
+    /*chatting section where text is inputed - text-container*/
+    #texting-area {
+        margin: 0;
+        padding: 0;
+    }
+
+    /*chatting section where text is inputed's li - texting-area*/
+    #texting-area li{
+        list-style: none;
+        background: linear-gradient(to bottom right, #0a6882, #00c4cc);
+        width: 60%;
+        margin: 5%;
+        margin-left: 30%;
+        color: aliceblue;
+        word-wrap: break-word;
+        float: right;
+}
+
+}
+

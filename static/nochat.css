@@ -1,0 +1,161 @@
+body{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #0a6882, #00c4cc);
+    margin: 0;
+}
+
+h1{
+    font-size: 50px;
+    color: azure;
+}
+
+#botfinder{
+    height: 85vh;
+    font-size: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user, #bot{
+    border: 3px solid;
+    height: 5vh;
+    width: 20vw;
+    font-size: 25px;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#user{
+    margin-top: 20%;
+}
+#bot{
+    margin-top: 10%;
+}
+
+#smt{
+    border-radius: 50px;
+    margin-top: 35%;
+    border: 3px solid;
+    height: 5vh;
+    width: 10vw;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#smt:hover{
+    background-color: azure;
+}
+
+#top-container{
+    background-color: #0a6882;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5{
+    margin: 0;
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 20px;
+    color: rgb(157, 28, 28);
+}
+
+#allcontainer{
+    width: 30%;
+    height: 80%;
+    background-color:#ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+@media only screen and (max-width: 912px) {
+
+
+    h1{
+        font-size: 50px;
+    }
+
+    #allcontainer{
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        
+    
+    }
+   
+    
+    #botfinder{
+        height: 85vh;
+        font-size: 50px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #user, #bot{
+        border: 3px solid;
+        height: 10vh;
+        width: 50vw;
+        font-size: 20px;
+        border-radius: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    #user{
+        margin-top: 35%;
+    }
+    #bot{
+        margin-top: 5%;
+    }
+    
+    #smt{
+        border-radius: 50px;
+        margin-top: 20%;
+        border: 2px solid;
+        height: 5vh;
+        width: 30vw;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #smt:hover{
+        background-color: azure;
+    }
+    
+    #top-container{
+        background-color: #0a6882;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    h5{
+        margin: 0;
+        text-align: center;
+        padding-bottom: 20%;
+        font-size: 20px;
+        color: rgb(157, 28, 28);
+    }
+
+
+
+}

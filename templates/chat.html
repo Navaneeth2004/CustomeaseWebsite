@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{chatbotname}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/chat.css">
+    </head>
+    <body>
+         <!-- main part of screen -->
+        <div id="bar2">
+
+            <!-- Top container -->
+
+            <div id="color-box-top">
+                <a id="returnlink" href="{{url_for('home')}}"><img id="return" src="https://www.svgrepo.com/show/67631/back-arrow.svg"></a>
+                <h2 id="color-box-top-text">{{chatbotname}}</h2>
+            </div>
+
+            <!-- Text container -->
+
+            <div id="text-container">
+                <ol id="texting-area">
+                </ol>
+                <img id="newmessage" src="https://icon-library.com/images/new-message-icon/new-message-icon-25.jpg">
+            </div>
+
+            <!-- Input container -->
+
+            <div id="chat-box-bottom">
+                <form class="interform">
+                    <textarea id="chat" name="chatbox" rows="4" cols="50" placeholder="Type Something.."></textarea>
+                    <input type="submit" onclick="sendpost()" id="submitchat" value="Send">
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+
+function sendpost() {
+    var chattext = document.getElementById("chat").value;
+
+    $.ajax({
+        type: "POST",
+        url: "{{ url_for('chat_home') }}",
+        data: {"text": chattext},
+        success: function(response) 
+        {
+            var botmsg = response.botchat.replace(/\n/g, "<br>");
+
+            if(botmsg !== "None" && botmsg !== undefined && botmsg !== null)
+            {  
+
+                var listareab = document.createElement("li");
+                const textarea = document.getElementById("texting-area");
+
+                listareab.style.float = "left";
+                listareab.style.background = 'linear-gradient(to right, #ffcc00, #ff6600)';
+                listareab.style.margin = "2%";
+                listareab.style.color = "black"
+                listareab.style.marginRight = "52%";
+
+                setTimeout(() => 
+                {
+                    console.log("None runs")
+                    listareab.innerHTML=botmsg;
+
+                    textarea.appendChild(listareab);
+
+                }, 1000);
+
+            }
+
+            $.ajax({
+                type: "GET",
+                url: "{{ url_for('clear_currentmsg') }}",
+            });
+        }
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function ()
+{
+
+    const submitele = document.getElementById("submitchat")
+
+    if(submitele)
+    {
+        submitele.addEventListener("click", function(e)
+        {
+
+            e.preventDefault();
+
+        const textfield = document.getElementById("chat");
+        const textarea = document.getElementById("texting-area");
+
+
+        if(textfield.value != "")
+        {
+            var listarea = document.createElement("li");
+
+            var value = textfield.value.replace(/\n/g, "<br>");
+
+            listarea.innerHTML=value;
+
+            textarea.appendChild(listarea);
+
+            textfield.value = "";
+        }
+
+        });
+
+    }
+
+});
+
+</script>
+</body>
+</html>

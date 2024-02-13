@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Details</title>
+        <link rel="stylesheet" href="../static/nochat.css">
+    </head>
+    <body>
+        <div id="allcontainer">
+            <div id="top-container">
+                <h1>Customease</h1>
+            </div>
+            <form id="botfinder" method="post">
+                <input id="user" type="text" name="username" placeholder="example@gmail.com">
+                <input id="bot" type="text" name="botname" placeholder="Chatbot">
+                <input id="smt" type="submit" name="smtbutton">
+            </form>
+            <div id="message">
+                {% with msg = get_flashed_messages() %}
+                {% if msg %}
+                    {% for x in msg %}
+                        <h5 id="msgbox">{{x}}</h5>
+                    {% endfor %}
+                    <script>
+                        var message = document.getElementById("msgbox");
+    
+                        setTimeout(() => {
+                            
+                            message.innerHTML = "";
+    
+                        }, 5000);
+                    </script>
+                {% endif %}
+                {% endwith %}
+            </div>
+
+        </div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function ()
+{
+
+    
+
+    const submitele = document.getElementById("submitchat")
+
+    if(submitele)
+    {
+        submitele.suaddEventListener("click", function()
+        {
+
+        const textfield = document.getElementById("chat");
+        const textarea = document.getElementById("texting-area");
+
+        var listarea = document.createElement("li");
+
+            if(textfield.value != "")
+            {
+
+                var value = textfield.value.replace(/\n/g, "<br>");
+
+                listarea.innerHTML=value;
+
+                textarea.appendChild(listarea);
+            }
+
+
+        });
+
+    }
+
+});
+    
+</script>
+</body>
+</html>

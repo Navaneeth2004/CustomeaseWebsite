@@ -171,5 +171,5 @@ def clear_currentmsg():
     session.pop("currentmsg", None)
     return "Currentmsg cleared!"
     
-app.run(debug=True)
+app.run(debug=False,host='0.0.0.0')
 
